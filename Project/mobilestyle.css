@@ -1,0 +1,96 @@
+
+/*----------------------------------------------------------------------------
+		Large devices (laptops and desktops, 1200px and down)
+----------------------------------------------------------------------------- */
+
+@media only screen and (max-width: 1200px) {
+    .about-container {
+        display: grid;
+        grid-template-areas:
+        "middle middle"
+        "middle middle"
+        "side side"
+        "bottom bottom";
+    }
+    .about-insperation {
+        align-content: space-evenly;
+    }
+}
+
+/*----------------------------------------------------------------------------
+		Small devices & landscape mode, 768px and down
+----------------------------------------------------------------------------- */
+
+@media only screen and (max-width: 768px) {
+    .insperation-container {
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+    .insperation-container > img {
+        width: 30%;
+        height: 30%;
+    }
+
+    .content {
+        display: grid;
+        grid-template-columns: repeat(1, 4fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-areas:
+        "middle"
+        "middle"
+        "sidebar"
+        "sidebar"
+        "bottom";
+    }
+    .text-column {
+        font-size: 20px;
+        padding: 10px;
+    }
+    .side-text-column {
+        font-size: 20px;
+        padding-top: 10px;
+    }
+    .container {
+        font-size: 16px;
+    }
+    form {
+        padding: 10px;
+    }
+}
+
+/*----------------------------------------------------------------------------
+	Extra small devices (phones, 600px and down)
+----------------------------------------------------------------------------- */
+
+@media only screen and (max-width: 600px) {
+    .footer {
+        overflow: scroll;
+        height: 60px;
+    }
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .copywrite, .social-media, .footer-contact {
+        padding: 5px;
+    }
+    .jumbotron {
+        margin-top: 35px;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .content {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-template-areas:
+        "middle";
+        font-size: 18px;
+    }
+
+    /* Home Page - Hide adds*/
+    .bottom-column, .side-column {
+        display: none;
+    }
+}

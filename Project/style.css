@@ -1,0 +1,388 @@
+/*----------------------------------------------------------------------------
+		Basic elements
+----------------------------------------------------------------------------- */
+* {
+   margin:0;
+   padding:0;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	background: url("./img/background.jpg") no-repeat center center fixed;
+    background-size: cover;
+    min-width: 280px;
+    height:100%;
+}
+
+.seo {
+    font-family: Comic Sans MS, Comic Sans, cursive;
+    font-style: oblique;
+    text-decoration: underline;
+}
+/*----------------------------------------------------------------------------
+		Navbar
+----------------------------------------------------------------------------- */
+
+.navbar-brand {
+	font-size: 30px;
+}
+.navbar {
+    padding: 5px;
+}
+.active {
+    background-color: black;
+    border-radius: 10px;
+}
+
+/*----------------------------------------------------------------------------
+		Every Page Component
+----------------------------------------------------------------------------- */
+.jumbotron {
+    background-image: linear-gradient(160deg, #6C52D9 30%, #9B8AE6 127%);
+    padding-bottom: 20px !important;
+    border: thin black solid;
+    margin-top: 15px;
+}
+
+.container {
+    min-height: 95%;
+	height: auto !important;
+	background-color: #ecdbdb;
+    padding-bottom: 50px; /* Height of the footer */
+}
+
+/*----------------------------------------------------------------------------
+		Index / Home Page
+----------------------------------------------------------------------------- */
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 3fr 3fr 1fr;
+    grid-gap: 5px;
+    grid-template-areas:
+    "sidebar middle"
+    "sidebar middle"
+    "sidebar middle"
+    "bottom bottom";
+}
+
+.middle-column {
+    grid-area: middle;
+    background: #f5ecec;
+    padding: 20px;
+    border: 5px groove lightgray;
+    border-radius: 10px;
+}
+#middle-column-img {
+    height: 200px;
+    display: block;
+    float: left;
+    padding-right: 10px;
+}
+
+.side-column {
+    grid-area: sidebar;
+
+    display: flex;
+    flex-direction: column;
+}
+.side-column-img {
+    order: 1;
+    flex-grow: 2;
+
+    background-image: url("img/saleBanner.png");
+    background-size: contain !important;
+}
+.side-text-column {
+    order: 2;
+    position: relative;
+    text-align: center;
+
+    font: italic small-caps bold 12px/30px Georgia, serif;
+    color: white;
+    background-color: #0934cb;
+
+    border: 5px solid #d71010;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 17%;
+    width: 90%;
+    margin: 6px;
+}
+
+.item-1,
+.item-2,
+.item-3 {
+	position: absolute;
+    display: block;
+
+    padding-top: 5px;
+    padding-right: 35px;
+
+	animation-duration: 25s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+}
+
+.item-1 {
+	animation-name: anim-1;
+}
+.item-2 {
+	animation-name: anim-2;
+}
+.item-3 {
+	animation-name: anim-3;
+}
+
+@keyframes anim-1 {
+	0%, 8.3% { left: -70%; opacity: 0; }
+    8.3%, 25% { left: 15%; opacity: 1; }
+    33.33%, 100% { left: 100%; opacity: 0; }
+}
+@keyframes anim-2 {
+	0%, 33.33% { left: -70%; opacity: 0; }
+    41.63%, 58.29% { left: 15%; opacity: 1; }
+    66.66%, 100% { left: 100%; opacity: 0; }
+}
+@keyframes anim-3 {
+	0%, 66.66% { left: -70%; opacity: 0; }
+    74.96%, 91.62% { left: 15%; opacity: 1; }
+    100% { left: 100%; opacity: 0; }
+}
+
+.bottom-column {
+    grid-area: bottom;
+    font-size: 14px;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-weight: bold;
+    color: #950719;
+}
+
+/*----------------------------------------------------------------------------
+		Abaout Page
+----------------------------------------------------------------------------- */
+.about-container {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    grid-template-rows: 3fr 1fr;
+    grid-gap: 5px;
+    grid-template-areas:
+    "side middle"
+    "side middle"
+    "bottom bottom";
+
+    background: #f5ecec;
+    padding: 10px;
+    border: thin gray solid;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+.about-container-text {
+    grid-area: middle;
+}
+
+.about-container-img {
+    grid-area: side;
+    border: 5px groove lightgray;
+    border-radius: 10px;
+    padding-right: 2px;
+    background: #63adda;
+}
+.about-container-img  > img {
+    object-fit: cover;
+    width: 100%;
+}
+.about-container-img  > p {
+    padding: 5px;
+    font-weight: bold;
+    text-indent: 2px;
+}
+
+.inspiration-img-container {
+    grid-area: bottom;
+    width: 100%;
+    max-width: 1140px;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    flex-direction: row;
+    padding: 5px;
+}
+.inspiration-img-container > img {
+    max-width: 177px;
+    max-height: 154px;
+    margin: 1px;
+    border: 1px solid #000;
+    box-shadow: 3px 3px 8px 0px rgba(0,0,0,0.3);
+}
+
+/*----------------------------------------------------------------------------
+		Contact Page
+----------------------------------------------------------------------------- */
+
+form {
+    padding: 30px 60px 30px;
+    border: 5px groove lightgray;
+    border-radius: 10px;
+    background: #f5ecec;
+    margin-bottom: 25px;
+}
+
+.form-group {
+    padding: 5px;
+}
+
+.btn-lg {
+    padding: 10px;
+    margin: 5px;
+}
+
+/*----------------------------------------------------------------------------
+		Gallery Page
+----------------------------------------------------------------------------- */
+.gallary-container {
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+    background: #f5ecec;
+    padding: 5px;
+    border: 5px groove lightgray;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+.gallary-img {
+    width: 100%;
+    height: 95%;
+    object-fit: cover;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.description {
+    display: none;
+    position: absolute;
+}
+.gallary-container > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /*Zoom in and out effect */
+	cursor: pointer;
+	transition: all 1s ease-in;
+}
+.gallary-container > div:hover {
+    transform: scale(1.1);
+    transition: all 1s ease-in;
+}
+.gallary-container > div:hover .description {
+    display: block;
+    text-align: center;
+    font-size: 15px;
+    padding: 15px;
+    font-weight: bold;
+    color: black;
+}
+.gallary-container > div:hover img {
+    opacity: 0.7;
+}
+
+
+/*----------------------------------------------------------------------------
+	Footer
+----------------------------------------------------------------------------- */
+.footer {
+    position: fixed;
+    bottom: 0;
+    height: 50px;
+    width: 100%;
+    background: #343a40;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    text-align: center;
+    color: #9d9d9d;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.copywrite {
+    order: 1;
+    padding: 20px;
+}
+.social-media {
+    order: 2;
+    padding: 5px;
+}
+.footer-contact {
+    order: 3;
+    padding: 10px 25px 10px 10px;
+}
+
+
+/* Social Media style*/
+.fa {
+    padding: 10px;
+    font-size: 60px;
+    width: 40px;
+    margin: 5px 2px;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+
+.fa-youtube {
+    background: #bb0000;
+    color: white;
+}
+
+
+/*----------------------------------------------------------------------------
+	The marquee tag has been made obsolete in HTML5
+    Using CSS3 Marquee instead
+----------------------------------------------------------------------------- */
+
+/* Make it a marquee */
+.marquee {
+    white-space: nowrap;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.marquee span {
+    display: inline-block;
+    padding-left: 100%;
+    text-indent: 0;
+    animation: marquee 15s linear infinite;
+}
+
+.marquee span:hover {
+    animation-play-state: paused
+}
+
+/* Make it move */
+@keyframes marquee {
+    0%   { transform: translate(0, 0); }
+    100% { transform: translate(-100%, 0); }
+}
